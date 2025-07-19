@@ -1,0 +1,269 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Documents | AIROTRIPS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css.css">
+
+    <style>
+        /* ==========================================================================
+           1. Global Styles & Variables (Consistent with other pages)
+           ========================================================================== */
+        :root {
+            --primary-color: #0d47a1; /* Deep Blue */
+            --secondary-color: #1976d2; /* Lighter Blue */
+            --accent-color: #ff6f00; /* Bright Orange */
+            --text-light: #ffffff;
+            --text-dark: #212529;
+            --bg-light-grey: #f8f9fa;
+            --border-color: #dee2e6;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-family); color: var(--text-dark); line-height: 1.7; }
+        a { text-decoration: none; color: var(--secondary-color); }
+        .container { max-width: 960px; /* Narrower for readability */ margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+        h1, h2, h3 { line-height: 1.2; margin-bottom: 20px; color: var(--primary-color); }
+
+        /* ==========================================================================
+           2. Reusable Header & Footer
+           ========================================================================== */
+        .header { background-color: var(--text-light); box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-menu ul { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { color: var(--text-dark); font-weight: 600; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: var(--accent-color); }
+        .header-phone { font-weight: 600; color: var(--primary-color); }
+        .mobile-nav-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
+        
+        .footer { background-color: var(--text-dark); color: var(--bg-light-grey); padding: 60px 0 20px 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; max-width: 1140px; margin-left: auto; margin-right: auto; padding: 0 20px; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-light); position: relative; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 50px; height: 2px; background-color: var(--accent-color); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: var(--bg-light-grey); transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--accent-color); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #ccc; }
+
+        /* ==========================================================================
+           3. Documents Page Specific Styles
+           ========================================================================== */
+        .page-intro {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .page-intro h1 {
+            font-size: 2.8rem;
+        }
+        .page-intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .document-category {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .document-category h2 {
+            font-size: 2rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .document-list {
+            list-style: none;
+        }
+
+        .document-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .document-list i {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .document-list li strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            border-radius: 8px;
+            padding: 50px 30px;
+        }
+        .final-cta h2 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+        }
+        .final-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .final-cta .btn {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        .final-cta .btn:hover {
+            transform: translateY(-3px);
+            background-color: #e66400;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-menu, .header-phone { display: none; }
+            .mobile-nav-toggle { display: block; }
+        }
+        @media (max-width: 768px) {
+            .page-intro h1 { font-size: 2.2rem; }
+            .document-category h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">AIROTRIPS</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="documents.html">Documents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+917715940786" class="header-phone">+91 77 15 940 786</a>
+                <i class="fas fa-bars mobile-nav-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section style="background-color: var(--bg-light-grey);">
+            <div class="container">
+                
+                <div class="page-intro">
+                    <h1>Essential Documents Guide</h1>
+                    <p>Navigating travel documentation can be complex. This guide outlines the basic documents required for common travel-related processes. Please note that requirements can vary by country and individual circumstances.</p>
+                </div>
+
+                <div class="document-category">
+                    <h2>For International Travel</h2>
+                    <ul class="document-list">
+                        <li><i class="fas fa-passport"></i> <strong>Passport:</strong> Must be valid for at least 6 months beyond your planned date of return.</li>
+                        <li><i class="fas fa-stamp"></i> <strong>Visa:</strong> A valid visa for your destination country, if required. Check the specific embassy requirements.</li>
+                        <li><i class="fas fa-plane-ticket-alt"></i> <strong>Air Tickets:</strong> Confirmed return or onward journey tickets.</li>
+                        <li><i class="fas fa-id-card"></i> <strong>Proof of Identity:</strong> Another form of government-issued ID like an Aadhar or PAN card can be useful.</li>
+                    </ul>
+                </div>
+                
+                <div class="document-category">
+                    <h2>For a New Indian Passport</h2>
+                    <ul class="document-list">
+                        <li><i class="fas fa-home"></i> <strong>Proof of Present Address:</strong> Aadhar Card, Voter ID, recent utility bill, or bank passbook.</li>
+                        <li><i class="fas fa-calendar-alt"></i> <strong>Proof of Date of Birth (DOB):</strong> Birth Certificate, School Leaving Certificate, or Aadhar Card.</li>
+                        <li><i class="fas fa-camera"></i> <strong>Photographs:</strong> Recent passport-sized photographs with a white background.</li>
+                        <li><i class="fas fa-file-alt"></i> <strong>Annexures:</strong> Specific declaration forms as required by the Passport Seva Kendra.</li>
+                    </ul>
+                </div>
+                
+                <div class="document-category">
+                    <h2>For a Tourist Visa (General)</h2>
+                    <ul class="document-list">
+                        <li><i class="fas fa-file-invoice"></i> <strong>Visa Application Form:</strong> Completed and signed form for the specific country.</li>
+                        <li><i class="fas fa-passport"></i> <strong>Passport & Photos:</strong> Original passport and recent photos as per the embassy's specifications.</li>
+                        <li><i class="fas fa-map-marked-alt"></i> <strong>Travel Itinerary:</strong> Day-by-day plan of your trip, including flight and hotel bookings.</li>
+                        <li><i class="fas fa-money-check-alt"></i> <strong>Proof of Financial Means:</strong> Recent bank statements or ITR to show you can fund your trip.</li>
+                        <li><i class="fas fa-briefcase"></i> <strong>Proof of Employment/Leave Letter:</strong> A letter from your employer stating your role and approved leave.</li>
+                    </ul>
+                </div>
+                
+                <div class="final-cta">
+                    <h2>Feeling Overwhelmed? Let Us Help.</h2>
+                    <p>Document requirements can be confusing and vary greatly. Our experts are here to provide personalized guidance for your specific needs, ensuring your application process is smooth and stress-free.</p>
+                    <a href="contact.html" class="btn">Get Expert Assistance</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>AIROTRIPS</h4>
+                <p>Your trusted partner for seamless global travel and documentation services. We simplify your journey from start to finish.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="documents.html">Documents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Air Ticketing</a></li>
+                    <li><a href="#">Visa Assistance</a></li>
+                    <li><a href="#">Passport Services</a></li>
+                    <li><a href="#">Document Attestation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p>
+                    <i class="fa-solid fa-phone"></i> +91 77 15 940 786<br>
+                    <i class="fa-solid fa-envelope"></i> contact@[yourcompany].com<br>
+                    <i class="fa-solid fa-map-marker-alt"></i> 123 Business Avenue, Gomti Nagar, Lucknow, Uttar Pradesh, 226010
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 AIROTRIPS. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

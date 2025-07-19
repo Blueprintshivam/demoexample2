@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIROTRIPS - Gateway to Seamless Global Travel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. Global & Professional Base
+           ========================================================================== */
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #1976d2;
+            --accent-color: #ff6f00;
+            --text-light: #ffffff;
+            --text-dark: #212529;
+            --bg-light-grey: #f8f9fa;
+            --border-color: #dee2e6;
+            --font-family: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--text-light);
+        }
+        a { text-decoration: none; color: var(--secondary-color); }
+        img { max-width: 100%; height: auto; display: block; }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        .btn { display: inline-block; padding: 12px 28px; background-color: var(--accent-color); color: var(--text-light); font-weight: 600; border-radius: 5px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .btn:hover { background-color: #e66400; }
+        section { padding: 80px 0; }
+
+        /* ==========================================================================
+           2. Desktop Header & Navigation
+           ========================================================================== */
+        .header { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-menu ul { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { color: var(--text-dark); font-weight: 600; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: var(--accent-color); }
+        .header-phone { font-weight: 600; color: var(--primary-color); }
+        .mobile-nav-toggle { display: none; font-size: 1.8rem; cursor: pointer; border: none; background: none; color: var(--primary-color); }
+
+        /* ==========================================================================
+           3. Page Sections (Hero, Services, etc.)
+           ========================================================================== */
+        .hero { background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(homeimage.png); background-size: cover; background-position: center; color: var(--text-light); height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-content h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 40px; }
+        .services { background-color: var(--bg-light-grey); }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--primary-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { background-color: var(--text-light); padding: 40px; text-align: center; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: block; color: var(--text-dark); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .service-card .icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-color); }
+        .why-choose-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .why-choose-us-image img { border-radius: 8px; }
+        .why-choose-us-content h3 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px; }
+        .why-choose-us-list { list-style: none; padding: 0; }
+        .why-choose-us-list li { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .why-choose-us-list i { color: var(--accent-color); margin-right: 15px; font-size: 1.2rem; }
+        .final-cta { background-color: var(--primary-color); color: var(--text-light); text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-light); }
+        .final-cta .cta-phone { font-size: 3rem; font-weight: 700; color: var(--text-light); margin-bottom: 30px; display: block; }
+        
+        /* ==========================================================================
+           4. Footer
+           ========================================================================== */
+        .footer { background-color: var(--text-dark); color: var(--bg-light-grey); padding: 60px 0 20px 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-light); position: relative; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 50px; height: 2px; background-color: var(--accent-color); }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: var(--bg-light-grey); transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--accent-color); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #ccc; }
+
+        /* ==========================================================================
+           5. Mobile App-Like Bottom Navigation
+           ========================================================================== */
+        .mobile-bottom-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; height: 65px; background-color: var(--text-light); box-shadow: 0 -2px 5px rgba(0,0,0,0.1); justify-content: space-around; align-items: center; z-index: 1000; }
+        .mobile-nav-link { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #999; font-size: 0.7rem; font-weight: 500; transition: color 0.3s ease; }
+        .mobile-nav-link i { font-size: 1.4rem; margin-bottom: 4px; }
+        .mobile-nav-link.active { color: var(--primary-color); }
+
+        /* ==========================================================================
+           6. Responsive Breakpoints (Conditional Design)
+           ========================================================================== */
+        
+        /* TABLET VIEW */
+        @media (max-width: 992px) {
+            .header-phone { display: none; }
+            .mobile-nav-toggle { display: block; }
+            .nav-menu { display: none; position: absolute; top: 70px; left: 0; right: 0; background-color: var(--text-light); box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; z-index: 1100; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid var(--border-color); }
+            .nav-menu a { display: block; padding: 15px 20px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-choose-us-grid { grid-template-columns: 1fr; } 
+            .why-choose-us-image { margin-bottom: 40px; text-align: center; }
+            .why-choose-us-image img { max-width: 80%; }
+        }
+
+        /* PHONE VIEW ("APP-LIKE" & COMPACT) */
+        @media (max-width: 768px) {
+            body { padding-bottom: 65px; }
+            .header .mobile-nav-toggle, .header-phone { display: none; }
+            .header .nav-menu { display: none !important; }
+            .mobile-bottom-nav { display: flex; }
+            section { padding: 60px 0; }
+
+            /* --- HEADER & HERO REFINEMENTS --- */
+            .header-container { justify-content: center; }
+            .header-contact { display: none; }
+            .hero { height: 50vh; } 
+            .hero-content h1 { font-size: 1.8rem; }
+            .hero-content h2 { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
+            
+            /* --- SERVICES REFINEMENTS --- */
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .service-card { padding: 20px 10px; }
+            .service-card h3 { font-size: 0.9rem; }
+            .service-card .icon { font-size: 2rem; }
+            .service-card p { font-size: 0.8rem; line-height: 1.4; }
+
+            /* --- NEW "WHY CHOOSE US" REFINEMENTS --- */
+            .why-choose-us {
+                padding: 50px 0; /* Shorter section */
+            }
+            .why-choose-us-grid {
+                grid-template-columns: 4fr 6fr;
+                gap: 15px;
+                align-items: center;
+            }
+            .why-choose-us-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
+            .why-choose-us-list li { font-size: 0.75rem; margin-bottom: 5px; align-items: flex-start; }
+            .why-choose-us-list i { margin-right: 6px; margin-top: 1px; }
+            
+            /* --- FINAL CTA & FOOTER REFINEMENTS --- */
+            .final-cta h2 { font-size: 1.5rem; }
+            .final-cta .cta-phone { font-size: 1.8rem; }
+            .footer {
+                padding: 40px 0 20px 0; /* Shorter footer */
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 25px;
+            }
+            .footer-col { text-align: center; }
+            .footer-col h4 { font-size: 1rem; margin-bottom: 10px; }
+            .footer-col p, .footer-col ul li a { font-size: 0.75rem; }
+            .footer-col ul li { margin-bottom: 4px; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">AIROTRIPS</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+917715940786" class="header-phone">+91 77 15 940 786</a>
+                <button class="mobile-nav-toggle" aria-label="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Gateway to Seamless Global Travel</h1>
+                <h2>Expert solutions for all your travel and documentation needs.</h2>
+                <a href="contact.html" class="btn">Get a Free Quote</a>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="services-grid">
+                    <a href="services.html#ticketing" class="service-card"><div class="icon"><i class="fa-solid fa-plane-departure"></i></div><h3>Air Ticketing</h3><p>Access competitive fares for domestic and international flights.</p></a>
+                    <a href="services.html#fares" class="service-card"><div class="icon"><i class="fa-solid fa-tags"></i></div><h3>Specialized Fares</h3><p>Exclusive deals for seaman, marine, student, and corporate travel.</p></a>
+                    <a href="services.html#visa" class="service-card"><div class="icon"><i class="fa-solid fa-passport"></i></div><h3>Visa Assistance</h3><p>Navigate complex visa application processes with our expert help.</p></a>
+                    <a href="services.html#passport" class="service-card"><div class="icon"><i class="fa-solid fa-book-journal-whills"></i></div><h3>Passport Services</h3><p>Streamlined assistance for new passports and renewal applications.</p></a>
+                    <a href="services.html#attestation" class="service-card"><div class="icon"><i class="fa-solid fa-stamp"></i></div><h3>Document Attestation</h3><p>Official legalization of your personal and professional documents.</p></a>
+                    <a href="services.html#insurance" class="service-card"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Travel Insurance</h3><p>Secure your journey with comprehensive travel insurance plans.</p></a>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <div class="container">
+                <div class="why-choose-us-grid">
+                    <div class="why-choose-us-image"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Professional travel agent assisting a client"></div>
+                    <div class="why-choose-us-content">
+                        <h3>Why Choose Us?</h3>
+                        <ul class="why-choose-us-list">
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Expert Guidance:</strong> Years of experience in the travel industry.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Competitive Pricing:</strong> Best value for flights, hotels, and packages.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Personalized Service:</strong> Tailored solutions to meet your specific needs.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>24/7 Support:</strong> We are here for you before, during, and after your trip.</li>
+                            <li><i class="fa-solid fa-check-circle"></i> <strong>Hassle-Free Process:</strong> We handle the complexities so you can relax.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Start Your Journey?</h2>
+                <a href="tel:+917715940786" class="cta-phone">+91 77 15 940 786</a>
+                <a href="contact.html" class="btn">Contact Us Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-col"><h4>AIROTRIPS</h4><p>Your trusted partner for seamless global travel and documentation services. We simplify your journey from start to finish.</p></div>
+                 <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                 <div class="footer-col"><h4>Our Services</h4><ul><li><a href="#">Air Ticketing</a></li><li><a href="#">Visa Assistance</a></li><li><a href="#">Passport Services</a></li><li><a href="#">Document Attestation</a></li></ul></div>
+                 <div class="footer-col"><h4>Contact Details</h4><p><i class="fa-solid fa-phone"></i> +91 77 15 940 786<br><i class="fa-solid fa-envelope"></i> contact@airotrips.com<br><i class="fa-solid fa-map-marker-alt"></i> 123 Business Avenue, Gomti Nagar, Lucknow, Uttar Pradesh, 226010</p></div>
+            </div>
+            <div class="copyright"> © 2025 AIROTRIPS. All Rights Reserved. </div>
+        </div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-link active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="services.html" class="mobile-nav-link">
+            <i class="fas fa-concierge-bell"></i>
+            <span>Services</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+    
+    <script>
+        // This script is for the TABLET hamburger menu
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Company Name - Gateway to Seamless Global Travel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">[Your Company Logo]</a>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-contact">
+                <a href="tel:+917715940786" class="header-phone">+91 77 15 940 786</a>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Gateway to Seamless Global Travel</h1>
+                <h2>Expert solutions for all your travel and documentation needs.</h2>
+                <a href="contact.html" class="btn">Get a Free Quote</a>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="services-grid">
+                    <a href="services.html#ticketing" class="service-card"><div class="icon"><i class="fa-solid fa-plane-departure"></i></div><h3>Air Ticketing</h3><p>Access competitive fares for domestic and international flights.</p></a>
+                    <a href="services.html#fares" class="service-card"><div class="icon"><i class="fa-solid fa-tags"></i></div><h3>Specialized Fares</h3><p>Exclusive deals for seaman, marine, student, and corporate travel.</p></a>
+                    <a href="services.html#visa" class="service-card"><div class="icon"><i class="fa-solid fa-passport"></i></div><h3>Visa Assistance</h3><p>Navigate complex visa application processes with our expert help.</p></a>
+                    <a href="services.html#passport" class="service-card"><div class="icon"><i class="fa-solid fa-book-journal-whills"></i></div><h3>Passport Services</h3><p>Streamlined assistance for new passports and renewal applications.</p></a>
+                    <a href="services.html#attestation" class="service-card"><div class="icon"><i class="fa-solid fa-stamp"></i></div><h3>Document Attestation</h3><p>Official legalization of your personal and professional documents.</p></a>
+                    <a href="services.html#insurance" class="service-card"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Travel Insurance</h3><p>Secure your journey with comprehensive travel insurance plans.</p></a>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <div class="container">
+                <div class="why-choose-us-grid">
+                    <div class="why-choose-us-image"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Professional travel agent assisting a client"></div>
+                    <div class="why-choose-us-content"><h3>Why Choose Us?</h3><ul class="why-choose-us-list"><li><i class="fa-solid fa-check-circle"></i> <strong>Expert Guidance:</strong> Years of experience in the travel industry.</li><li><i class="fa-solid fa-check-circle"></i> <strong>Competitive Pricing:</strong> Best value for flights, hotels, and packages.</li><li><i class="fa-solid fa-check-circle"></i> <strong>Personalized Service:</strong> Tailored solutions to meet your specific needs.</li><li><i class="fa-solid fa-check-circle"></i> <strong>24/7 Support:</strong> We are here for you before, during, and after your trip.</li><li><i class="fa-solid fa-check-circle"></i> <strong>Hassle-Free Process:</strong> We handle the complexities so you can relax.</li></ul></div>
+                </div>
+            </div>
+        </section>
+        <section class="final-cta">
+            <div class="container"><h2>Ready to Start Your Journey?</h2><a href="tel:+917715940786" class="cta-phone">+91 77 15 940 786</a><a href="contact.html" class="btn">Contact Us Now</a></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-col"><h4>[Your Company Name]</h4><p>Your trusted partner for seamless global travel and documentation services. We simplify your journey from start to finish.</p></div>
+                 <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                 <div class="footer-col"><h4>Our Services</h4><ul><li><a href="services.html#ticketing">Air Ticketing</a></li><li><a href="services.html#visa">Visa Assistance</a></li><li><a href="services.html#passport">Passport Services</a></li><li><a href="services.html#attestation">Document Attestation</a></li></ul></div>
+                 <div class="footer-col"><h4>Contact Details</h4><p><i class="fa-solid fa-phone"></i> +91 77 15 940 786<br><i class="fa-solid fa-envelope"></i> contact@[yourcompany].com<br><i class="fa-solid fa-map-marker-alt"></i> 123 Business Avenue, Gomti Nagar, Lucknow, Uttar Pradesh, 226010</p></div>
+            </div>
+            <div class="copyright"> © 2025 [Your Company Name]. All Rights Reserved. </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>

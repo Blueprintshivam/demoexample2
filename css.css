@@ -1,0 +1,136 @@
+ /* ==========================================================================
+           1. Global Styles & Variables
+           ========================================================================== */
+           :root {
+            --primary-color: #0d47a1; /* Deep Blue */
+            --secondary-color: #1976d2; /* Lighter Blue */
+            --accent-color: #ff6f00; /* Bright Orange */
+            --text-light: #ffffff;
+            --text-dark: #212529;
+            --bg-light-grey: #f8f9fa;
+            --border-color: #dee2e6;
+            --font-family: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-family); color: var(--text-dark); line-height: 1.6; background-color: var(--text-light); }
+        a { text-decoration: none; color: var(--secondary-color); }
+        img { max-width: 100%; height: auto; }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        .btn { display: inline-block; padding: 12px 28px; background-color: var(--accent-color); color: var(--text-light); font-weight: 600; border-radius: 5px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .btn:hover { background-color: #e66400; }
+        section { padding: 80px 0; }
+
+        /* ==========================================================================
+           2. Header & Navigation
+           ========================================================================== */
+        .header { background-color: var(--text-light); box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-menu ul { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { color: var(--text-dark); font-weight: 600; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: var(--accent-color); }
+        .header-phone { font-weight: 600; color: var(--primary-color); }
+        .mobile-nav-toggle { display: none; font-size: 1.8rem; cursor: pointer; border: none; background: none; }
+
+        /* ==========================================================================
+           3. Hero Section
+           ========================================================================== */
+        .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(homeimage.png); background-size: cover; background-position: center; color: var(--text-light); height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; }
+        .hero-content h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 40px; }
+
+        /* ==========================================================================
+           4. Services Overview Section
+           ========================================================================== */
+        .services { background-color: var(--bg-light-grey); }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--primary-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { background-color: var(--text-light); padding: 40px; text-align: center; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: block; color: var(--text-dark); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .service-card .icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-color); }
+        
+        /* ==========================================================================
+           5. 'Why Choose Us?' Section
+           ========================================================================== */
+        .why-choose-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .why-choose-us-image img { border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .why-choose-us-content h3 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px; }
+        .why-choose-us-list { list-style: none; }
+        .why-choose-us-list li { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .why-choose-us-list i { color: var(--accent-color); margin-right: 15px; font-size: 1.2rem; }
+        
+        /* ==========================================================================
+           6. Final CTA Section
+           ========================================================================== */
+        .final-cta { background-color: var(--primary-color); color: var(--text-light); text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .final-cta .cta-phone { font-size: 3rem; font-weight: 700; color: var(--text-light); margin-bottom: 30px; display: block; }
+        
+        /* ==========================================================================
+           7. Footer
+           ========================================================================== */
+        .footer { background-color: var(--text-dark); color: var(--bg-light-grey); padding: 60px 0 20px 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-light); position: relative; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 50px; height: 2px; background-color: var(--accent-color); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: var(--bg-light-grey); transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--accent-color); padding-left: 5px; }
+        .footer-col p { line-height: 1.8; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #ccc; }
+
+        /* ==========================================================================
+           8. Responsiveness (Media Queries)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .header-phone { display: none; }
+            .mobile-nav-toggle { display: block; } /* Show hamburger icon */
+
+            /* --- NEW CSS FOR MOBILE MENU --- */
+            .nav-menu {
+                display: none; /* Hide menu by default */
+                position: absolute;
+                top: 70px; /* Position below header */
+                left: 0;
+                right: 0;
+                background-color: var(--text-light);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                width: 100%;
+            }
+            .nav-menu.active {
+                display: block; /* Show menu when active */
+            }
+            .nav-menu ul {
+                flex-direction: column; /* Stack links vertically */
+                gap: 0;
+            }
+            .nav-menu li {
+                border-bottom: 1px solid var(--border-color);
+            }
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+            }
+            /* --- END NEW CSS --- */
+
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-choose-us-grid { grid-template-columns: 1fr; }
+            .why-choose-us-image { margin-bottom: 40px; text-align: center; }
+            .why-choose-us-image img { max-width: 80%; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.2rem; }
+            .section-title, .why-choose-us-content h3, .final-cta h2 { font-size: 2rem; }
+            .hero { height: 70vh; }
+            .services-grid { grid-template-columns: 1fr; }
+            .final-cta .cta-phone { font-size: 2rem; }
+        }
+
+
+       

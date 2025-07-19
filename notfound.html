@@ -1,0 +1,207 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found (404) | AIROTRIPS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. Global Styles & Variables
+           ========================================================================== */
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #1976d2;
+            --accent-color: #ff6f00;
+            --text-light: #ffffff;
+            --text-dark: #212529;
+            --bg-light-grey: #f8f9fa;
+            --border-color: #dee2e6;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { font-family: var(--font-family); color: var(--text-dark); line-height: 1.7; display: flex; flex-direction: column; }
+        a { text-decoration: none; color: var(--secondary-color); }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        main { flex-grow: 1; }
+
+        /* ==========================================================================
+           2. Reusable Header & Footer
+           ========================================================================== */
+        .header { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-menu ul { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { color: var(--text-dark); font-weight: 600; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: var(--accent-color); }
+        .header-phone { font-weight: 600; color: var(--primary-color); }
+        .mobile-nav-toggle { display: none; font-size: 1.8rem; cursor: pointer; border: none; background: none; color: var(--primary-color); }
+        
+        .footer { background-color: var(--text-dark); color: var(--bg-light-grey); padding: 60px 0 20px 0; flex-shrink: 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-light); position: relative; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 50px; height: 2px; background-color: var(--accent-color); }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: var(--bg-light-grey); transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--accent-color); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #ccc; }
+
+        /* ==========================================================================
+           3. 404 Page Specific Styles
+           ========================================================================== */
+        .error-section { display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 0; flex-grow: 1; }
+        .error-content .icon { font-size: 6rem; color: var(--primary-color); margin-bottom: 20px; animation: float 4s ease-in-out infinite; }
+        .error-content h1 { font-size: 8rem; font-weight: 700; color: var(--primary-color); line-height: 1; margin-bottom: 10px; }
+        .error-content h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px; }
+        .error-content p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; }
+        .btn-home { display: inline-block; padding: 15px 35px; background-color: var(--accent-color); color: var(--text-light); font-weight: 600; border-radius: 5px; transition: background-color 0.3s ease, transform 0.3s ease; border: none; cursor: pointer; font-size: 1.1rem; }
+        .btn-home:hover { background-color: #e66400; transform: translateY(-3px); }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ==========================================================================
+           4. Mobile App-Like Bottom Navigation
+           ========================================================================== */
+        .mobile-bottom-nav { display: none; position: fixed; bottom: 0; left: 0; right: 0; height: 65px; background-color: var(--text-light); box-shadow: 0 -2px 5px rgba(0,0,0,0.1); justify-content: space-around; align-items: center; z-index: 1000; }
+        .mobile-nav-link { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #999; font-size: 0.7rem; font-weight: 500; transition: color 0.3s ease; }
+        .mobile-nav-link i { font-size: 1.4rem; margin-bottom: 4px; }
+        .mobile-nav-link.active { color: var(--primary-color); }
+        
+        /* ==========================================================================
+           5. Responsive Breakpoints
+           ========================================================================== */
+        
+        @media (max-width: 992px) {
+            .header-phone { display: none; }
+            .mobile-nav-toggle { display: block; }
+            .nav-menu { display: none; position: absolute; top: 70px; left: 0; right: 0; background-color: var(--text-light); box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; z-index: 1100; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid var(--border-color); }
+            .nav-menu a { display: block; padding: 15px 20px; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-bottom: 65px; }
+            .header .mobile-nav-toggle { display: none; }
+            .header .nav-menu { display: none !important; }
+            .mobile-bottom-nav { display: flex; }
+            .header-container { justify-content: center; }
+            .header-contact { display: none; }
+            
+            /* --- 404 PAGE REFINEMENTS --- */
+            .error-section { padding: 40px 0; }
+            .error-content .icon { font-size: 4rem; }
+            .error-content h1 { font-size: 5rem; }
+            .error-content h2 { font-size: 1.5rem; }
+            .error-content p { font-size: 0.9rem; }
+            .btn-home { padding: 12px 25px; font-size: 1rem; }
+
+            /* --- FOOTER REFINEMENTS --- */
+            .footer { padding: 40px 0 20px 0; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .footer-col { text-align: center; }
+            .footer-col h4 { font-size: 1rem; margin-bottom: 10px; }
+            .footer-col p, .footer-col ul li a { font-size: 0.75rem; }
+            .footer-col ul li { margin-bottom: 4px; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">AIROTRIPS</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+917715940786" class="header-phone">+91 77 15 940 786</a>
+                <button class="mobile-nav-toggle" aria-label="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content">
+                    <div class="icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h1>404</h1>
+                    <h2>Oops! Page Not Found.</h2>
+                    <p>It seems you've taken a wrong turn. The page you are looking for does not exist or has been removed.</p>
+                    <a href="index.html" class="btn-home">Go to Homepage</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-col"><h4>AIROTRIPS</h4><p>Your trusted partner for seamless global travel and documentation services.</p></div>
+                 <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                 <div class="footer-col"><h4>Our Services</h4><ul><li><a href="#">Air Ticketing</a></li><li><a href="#">Visa Assistance</a></li><li><a href="#">Passport Services</a></li></ul></div>
+                 <div class="footer-col"><h4>Contact Details</h4><p><i class="fa-solid fa-phone"></i> +91 77 15 940 786<br><i class="fa-solid fa-envelope"></i> contact@airotrips.com<br><i class="fa-solid fa-map-marker-alt"></i> Lucknow, UP, India</p></div>
+            </div>
+            <div class="copyright"> © 2025 AIROTRIPS. All Rights Reserved. </div>
+        </div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="services.html" class="mobile-nav-link">
+            <i class="fas fa-concierge-bell"></i>
+            <span>Services</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+    
+    <script>
+        // This script is for the TABLET hamburger menu
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+```
